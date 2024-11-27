@@ -1,5 +1,4 @@
 const port = process.env.HOST_PORT || 9090
-console.log(process.env.PRIVATE_KEY_SHASTA, '=============')
 
 module.exports = {
   networks: {
