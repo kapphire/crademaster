@@ -1,4 +1,5 @@
 const port = process.env.HOST_PORT || 9090
+console.log(process.env.PRIVATE_KEY_SHASTA, '=============')
 
 module.exports = {
   networks: {
@@ -44,7 +45,16 @@ Then, run the migration with:
     },
     compilers: {
       solc: {
-        version: '0.8.6'
+        version: '0.8.6',
+        settings: {
+          optimizer: {
+              enabled: true,
+              runs: 200
+          }
+        },
+        evmVersion: 'istanbul',
+        viaIR: true,
+        solcFilePath: "C:/Users/sapxhire/.tronbox/solc/soljson_v0.8.6.js"
       }
     }
   },
